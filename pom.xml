@@ -1,72 +1,144 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>gamesbehind</groupId>
-	<artifactId>gamesbehind</artifactId>
-	<packaging>war</packaging>
-	<version>1.0</version>
-	<name>gamesbehind</name>
-	<repositories>
-		<repository>
-			<id>eap</id>
-			<url>http://maven.repository.redhat.com/techpreview/all</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>eap</id>
-			<url>http://maven.repository.redhat.com/techpreview/all</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-6.0</artifactId>
-			<version>3.0.0.Final-redhat-1</version>
-			<type>pom</type>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
-	<profiles>
-		<profile>
-			<!-- When built in OpenShift the 'openshift' profile will be used when 
-				invoking mvn. -->
-			<!-- Use this profile for any OpenShift specific customization your app 
-				will need. -->
-			<!-- By default that is to put the resulting archive into the 'webapps' 
-				folder. -->
-			<!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
-			<id>openshift</id>
-			<build>
-				<finalName>gamesbehind</finalName>
-				<plugins>
-					<plugin>
-						<artifactId>maven-war-plugin</artifactId>
-						<version>2.1.1</version>
-						<configuration>
-							<outputDirectory>webapps</outputDirectory>
-							<warName>ROOT</warName>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mjwall</groupId>
+  <artifactId>gamesbehind</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>gamesbehind</name>
+  <description>Charts of MLB Games Behind over time</description>
+
+  <repositories>
+    <repository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>https://oss.sonatype.org/contents/groups/scala-tools</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.org</id>
+      <name>Scala-Tools Maven2 Repository</name>
+      <url>https://oss.sonatype.org/contents/groups/scala-tools</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <properties>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <encoding>UTF-8</encoding>
+    <scala.version>2.9.2</scala.version>
+    <scala.test.version>2.0.M5b</scala.test.version>
+    <unfiltered.version>0.6.7</unfiltered.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.databinder</groupId>
+      <artifactId>unfiltered-filter_${scala.version}</artifactId>
+      <version>${unfiltered.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.3</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.clapper</groupId>
+      <artifactId>avsl_${scala.version}</artifactId>
+      <version>0.4</version>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.9</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_${scala.version}</artifactId>
+      <version>${scala.test.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/scala</sourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>3.1.3</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <includes>
+            <include>**/*Spec.class</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <!-- When built in OpenShift the 'openshift' profile will be used when
+           invoking mvn. -->
+      <!-- Use this profile for any OpenShift specific customization your app
+           will need. -->
+      <!-- By default that is to put the resulting archive into the 'webapps'
+           folder. -->
+      <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
+      <id>openshift</id>
+      <build>
+        <finalName>gamesbehind</finalName>
+        <plugins>
+          <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.1.1</version>
+            <configuration>
+              <outputDirectory>webapps</outputDirectory>
+              <warName>ROOT</warName>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
