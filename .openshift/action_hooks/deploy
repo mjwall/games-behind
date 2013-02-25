@@ -3,3 +3,7 @@
 # build hook has been run but before the application has been started back
 # up again.  This script gets executed directly, so it could be python, php,
 # ruby, etc.
+echo "deploy running now"
+export M2_HOME=/var/lib/openshift/512a494a4382ec1b54000001/.m2/apache-maven-3.0.4
+export M2="${M2_HOME}/bin"
+export PATH="${M2}:$PATH"
