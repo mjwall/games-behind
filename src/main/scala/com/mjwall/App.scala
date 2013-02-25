@@ -39,7 +39,7 @@ class App extends unfiltered.filter.Plan {
     Html(
      <html>
       <head>
-        <title>uf example</title>
+        <title>Games Behind</title>
         <link rel="stylesheet" type="text/css" href="/css/app.css"/>
       </head>
       <body>
