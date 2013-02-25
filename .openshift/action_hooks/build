@@ -3,6 +3,7 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
+echo "build running now"
 export M2_HOME=/var/lib/openshift/512a494a4382ec1b54000001/.m2/apache-maven-3.0.4
 export M2="${M2_HOME}/bin"
 export PATH="${M2}:$PATH"
