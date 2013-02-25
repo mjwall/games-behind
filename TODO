@@ -1,0 +1,35 @@
+TODOs
+
+First cut
+- push to github
+- add ensime plugin
+- import xml files, probably as files, will need to recreate the mongodb where I stored them last year
+- give route to view files
+- design json representation of games behind for entire year
+- scala code to parse one xml
+- scala to use parsed xml and create/update year json
+- javascript to display chart by league and division (highcharts?)
+- update readme
+- figure out scala test to test all the scala
+- look into something to test the javascript
+- maybe hook into travis-ci
+
+For 2013-2012 season
+- create code to grab new xml and store
+  - ensure it gets the correct day
+- create wrapper to get xml and process to yearly json
+- create cron to call wrapper
+
+Later
+- Maybe create new g8 that works (does no one care about wars anymore?)
+- write blog post about experiences
+- marketing so the Orioles will hire me
+
+DONEs
+- pick framework, play2, scalatra, unfiltered
+  - going with unfiltered, scalatra is sinatra and play makes me mad cause I can't make a war
+- skeleton project (start with https://github.com/unfiltered/unfiltered-war.g8)
+  - had to update some dependencies, as it wasn't building
+  - also added ContextPath so I could deploy to tomcat as a war
+- create project on openshift (https://gamesbehind-mjwall.rhcloud.com/)
+- deploy skeleton
