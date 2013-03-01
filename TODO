@@ -5,6 +5,7 @@ First cut
 - add ensime plugin
 - import xml files, probably as files, will need to recreate the mongodb where I stored them last year
 - give route to view files
+- add scalate templating
 - design json representation of games behind for entire year
 - scala code to parse one xml
 - scala to use parsed xml and create/update year json
