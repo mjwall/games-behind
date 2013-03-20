@@ -1,7 +1,6 @@
 TODOs
 
 First cut
-- push to github
 - add ensime plugin
 - import xml files, probably as files, will need to recreate the mongodb where I stored them last year
 - give route to view files
@@ -33,3 +32,4 @@ DONEs
   - also added ContextPath so I could deploy to tomcat as a war
 - create project on openshift (https://gamesbehind-mjwall.rhcloud.com/)
 - deploy skeleton
+- push to github
