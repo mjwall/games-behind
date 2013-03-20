@@ -1,9 +1,0 @@
-Games Behind
-
-Need a better readme
-
-Currently, it is a version of https://github.com/unfiltered/unfiltered-war.g8 with the dependencies updated because it didn't build.  I also moved to maven, because openshift can run mvn package and create war.
-
-You can view the app at https://gamesbehind-mjwall.rhcloud.com/
-
-The old repo where I tried to build this with Play2 is gone.  I really didn't like not being able to build a war.
