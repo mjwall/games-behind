@@ -1,8 +1,11 @@
 !!!
 %html
   %head
-    %title GamesBehind
+    = bootstrap_assets
   %body
-    %h1 GamesBehind
-    %p
-      Welcome to Games Behind
+    - container :fluid do
+      - row do
+        - span3 do
+          %p Welcome to Games Behind
+        - span5 :offset => 4 do
+          %p more coming soon

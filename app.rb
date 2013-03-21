@@ -1,7 +1,9 @@
 require 'sinatra/base'
+require 'sinatra/twitter-bootstrap'
 require 'haml'
 
 class MyApp < Sinatra::Base
+  register Sinatra::Twitter::Bootstrap::Assets
 
   get '/' do
     haml :index
