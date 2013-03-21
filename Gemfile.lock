@@ -3,6 +3,7 @@ GEM
   specs:
     haml (4.0.0)
       tilt
+    minitest (2.5.1)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -18,6 +19,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  minitest
   rack
   sinatra
   sinatra-twitter-bootstrap
