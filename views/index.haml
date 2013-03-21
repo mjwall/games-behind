@@ -3,9 +3,14 @@
   %head
     = bootstrap_assets
   %body
-    - container :fluid do
-      - row do
-        - span3 do
-          %div.title Games Behind
-        - span5 :offset => 4 do
-          %p more coming soon
+    %div.navbar.navbar-fixed-top
+      %div.navbar-inner
+        %div.container
+          %a.btn.btn-navbar{"data-toggle" => "collapse", "data-target" => ".nav-collapse"}
+            %span.icon-bar
+          %a.brand{:href => "google.com"} Home
+      %header.jumbotron.subhead{:id => "overview"}
+        %div.row
+          %div.span6
+            %h1 Games Behind
+            %p.lead Where does your team stand?
