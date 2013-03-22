@@ -4,6 +4,7 @@ require 'haml'
 
 require './helpers.rb'
 
+#TODO, set up environments
 
 class MyApp < Sinatra::Base
   register Sinatra::Twitter::Bootstrap::Assets
@@ -17,8 +18,8 @@ class MyApp < Sinatra::Base
     haml :index
   end
 
-  get %r{/data_path/([\d]{8})} do |d|
-    data_path d
+  get %r{/datetime/([\d]{8})} do |d|
+    parse_datetime(data_path(d)).strftime("%F")
   end
 
   get '/orig' do
