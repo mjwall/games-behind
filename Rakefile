@@ -6,3 +6,7 @@ Rake::TestTask.new do |t|
   t.ruby_opts << '-I.'
   #t.pattern = "spec/*_spect.rb"
 end
+
+task :console do
+  sh "irb -r ./app.rb"
+end
