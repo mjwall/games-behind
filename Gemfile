@@ -7,4 +7,8 @@ gem 'activesupport'
 
 group :development, :test do
   gem 'minitest'
+  gem 'rack-test'
+  gem 'autotest-standalone'
+  gem 'turn', :require => false
+  gem 'mocha' , :require => false
 end
