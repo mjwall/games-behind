@@ -13,3 +13,11 @@ rescue
   # just keep going, turn no installed
   LoadError
 end
+
+# class MiniTest::Spec
+#   include Rack::Test::Methods
+
+#   def app
+#     Rack::Builder.parse_file(File.dirname(__FILE__) + "/../config.ru").first
+#   end
+# end
