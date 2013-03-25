@@ -3,7 +3,7 @@ require 'sinatra/twitter-bootstrap'
 require 'haml'
 
 require_relative 'lib/helpers.rb'
-require_relative 'lib/daily.rb'
+require_relative 'lib/models.rb'
 
 #TODO, set up environments
 
