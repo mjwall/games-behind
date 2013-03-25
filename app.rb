@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'sinatra/twitter-bootstrap'
 require 'haml'
 
-require_relative 'lib/utils.rb'
+require_relative 'lib/helpers.rb'
 require_relative 'lib/daily.rb'
 
 #TODO, set up environments
@@ -10,7 +10,7 @@ require_relative 'lib/daily.rb'
 class MyApp < Sinatra::Base
   register Sinatra::Twitter::Bootstrap::Assets
 
-  helpers Sinatra::Utils
+  helpers Sinatra::MyHelpers
 
   get '/' do
     haml :index

@@ -1,8 +1,6 @@
 require File.expand_path '../../spec_helper.rb', __FILE__
 
-describe Sinatra::Utils do
-  #include Sinatra::Utils
-
+describe Sinatra::MyHelpers do
   before do
     @app = MyApp.new
   end

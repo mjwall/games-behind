@@ -1,7 +1,7 @@
 require 'active_support/core_ext/hash'
 
 module Sinatra
-  module Utils
+  module MyHelpers
     def data_path date=nil
       data_dir = "#{settings.root}/public/data"
       if date == nil
@@ -16,5 +16,5 @@ module Sinatra
     end
 
   end
-  helpers Utils
+  helpers MyHelpers
 end
