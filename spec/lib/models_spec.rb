@@ -9,6 +9,14 @@ describe Daily do
       @daily.get_xml("20120416").wont_be_nil
     end
 
+    it "should error if the input is not an 8 digit string" do
+      exception = lambda {
+        @daily.get_xml("asdf")
+      }.must_raise RuntimeError
+      exception.message.must_equal "Not an 8 digit date"
+    end
+
+
     it "should look for an associated file under the data_path/year" do
     end
 
@@ -16,9 +24,6 @@ describe Daily do
     end
 
     it "should error if the file is not found" do
-    end
-
-    it "should error if the input is not an 8 digit string" do
     end
 
   end
