@@ -29,16 +29,17 @@ class Daily
     DateTime.parse hash['sports_content']['sports_metadata']['date_time']
   end
 
+  def file_location
+    @file_location ||= set_file_location
+  end
+
   def persist
-    raise RuntimeError.new "No data directory specificed" if data_dir == nil
     # will be stored with previous days date as filename
-    prior_date = (file_date - 1).strftime('%Y%m%d')
-    location = "#{data_dir}/#{prior_date[0..3]}/#{prior_date}.xml"
-    raise RuntimeError.new "Not overwriting, File already exists, #{location}" if File.exists?(location)
-    File.open(location,'w') do |f|
+    raise RuntimeError.new "Not overwriting, File already exists, #{file_location}" if File.exists?(file_location)
+    File.open(file_location,'w') do |f|
       f.write @xml
     end
-    puts "File saved to @{location}"
+    puts "File saved to #{file_location}"
   end
 
   def persist_to data_dir
@@ -52,5 +53,13 @@ class Daily
       d.xml = f.read
     end
     d
+  end
+
+  private
+  def set_file_location
+    raise RuntimeError.new "No data directory specificed" if data_dir == nil
+    raise RuntimeError.new "No file date specified" if file_date == nil
+    prior_date = (file_date - 1).strftime('%Y%m%d')
+    "#{@data_dir}/#{prior_date[0..3]}/#{prior_date}.xml"
   end
 end

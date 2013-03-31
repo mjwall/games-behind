@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'haml'
 gem 'sinatra-twitter-bootstrap'
 gem 'activesupport'
+gem 'mail'
 
 group :development, :test do
   gem 'minitest'
