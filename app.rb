@@ -4,6 +4,7 @@ require 'haml'
 
 require_relative 'lib/helpers.rb'
 require_relative 'lib/models.rb'
+require_relative 'lib/fetcher.rb'
 
 #TODO, set up environments
 
@@ -35,6 +36,10 @@ class MyApp < Sinatra::Base
     get_daily(d).xml.to_s
   end
 
+  get '/fetch' do
+    content_type :text
+    Fetcher.fetch
+  end
 
   private
   def get_daily date_str

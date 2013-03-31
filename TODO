@@ -1,0 +1,11 @@
+TODO's
+
+- missing daily/whatever should return 404, not 500
+- build json for 1 day
+- build aggregate json
+- hook in some way to update aggregate json when new file added
+- build charts
+- clean up home link
+- update API calls, request token
+- get data since 2008, http://erikberg.com/mlb/standings/20080505.json
+- Give credit on data on home page
