@@ -40,6 +40,6 @@ task :fetch do
   end
   mail.body= msg
   mail.delivery_method :sendmail
-  #mail.deliver
+  mail.deliver
   puts msg
 end
