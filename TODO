@@ -6,3 +6,6 @@ TODO's
 - hook in some way to update aggregate json when new file added
 - build charts
 - clean up home link
+- update API calls, request token
+- get data since 2008, http://erikberg.com/mlb/standings/20080505.json
+- Give credit on data on home page
