@@ -10,6 +10,7 @@ group :development, :test do
   gem 'minitest'
   gem 'rack-test'
   gem 'autotest-standalone'
+  gem 'autotest-growl'
   gem 'turn', :require => false
   gem 'mocha' , :require => false
 end
