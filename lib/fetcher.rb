@@ -10,7 +10,7 @@ class Fetcher
       subject 'Rake fetch from openshift'
     end
 
-    data_dir = File.dirname(__FILE__) + "/../../data"
+    data_dir = File.dirname(__FILE__) + "/../data"
     yesterday_str = (Date.today - 1).strftime('%Y%m%d')
     # to test file delivery, remove 20121003.xml
     # yesterday_str = "20121003"
@@ -40,7 +40,7 @@ class Fetcher
         msg += "\nERROR: " + e.message
       end
     end
-    mail.body= msg
+    mail.text_part { body msg }
     mail.delivery_method :sendmail
     mail.deliver
     msg
