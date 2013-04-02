@@ -25,8 +25,9 @@ class Daily
   end
 
   def file_date
-    # file usually comes out early in the day and only contains data for the previous day's games
-    DateTime.parse hash['sports_content']['sports_metadata']['date_time']
+    # file used to come out early in the day and only contain data for the previous day's games
+    # looks like as of 2013 the date is late on the same day
+    @file_date ||=  DateTime.parse hash['sports_content']['sports_metadata']['date_time']
   end
 
   def file_location
@@ -50,8 +51,10 @@ class Daily
   end
 
   def self.fetch_latest
+    today_str = Date.today.strftime('%Y%m%d')
     d = Daily.new
-    open("http://erikberg.com/mlb/standings.xml") do |f|
+    d.instance_variable_set(:@file_date, DateTime.now)
+    open("http://erikberg.com/mlb/standings/#{today_str}.xml") do |f|
       d.xml = f.read
     end
     d

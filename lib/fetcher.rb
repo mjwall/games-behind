@@ -39,10 +39,12 @@ class Fetcher
       rescue Exception => e
         msg += "\nERROR: " + e.message
       end
+      puts "Sending email"
+      # only deliver mail on error
+      mail.text_part { body msg }
+      mail.delivery_method :sendmail
+      mail.deliver
     end
-    mail.text_part { body msg }
-    mail.delivery_method :sendmail
-    mail.deliver
     msg
   end
 end
