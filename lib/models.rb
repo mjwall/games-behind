@@ -36,6 +36,8 @@ class Daily
   def persist
     # will be stored with previous days date as filename
     raise RuntimeError.new "Not overwriting, File already exists, #{file_location}" if File.exists?(file_location)
+    directory = File.dirname(file_location)
+    Dir.mkdir directory  unless Dir.exists?(directory)
     File.open(file_location,'w') do |f|
       f.write @xml
     end
