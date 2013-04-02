@@ -27,6 +27,7 @@ class Daily
   def file_date
     # file used to come out early in the day and only contain data for the previous day's games
     # looks like as of 2013 the date is late on the same day
+    # need to verify, but if time is 00:00:00-0:40, go back 1 day.  Otherwise, keep same day
     @file_date ||=  DateTime.parse hash['sports_content']['sports_metadata']['date_time']
   end
 
