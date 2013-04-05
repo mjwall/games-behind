@@ -3,44 +3,33 @@ require 'mail'
 
 class Fetcher
   def self.fetch
-    msg = "Running Fetcher.fetch"
+    data_dir = File.dirname(__FILE__) + "/../data"
     mail = Mail.new do
       from 'mjwall@gmail.com'
       to 'mjwall@gmail.com'
       subject 'Rake fetch from openshift'
     end
+    msg = ""
 
-    data_dir = File.dirname(__FILE__) + "/../data"
-    yesterday_str = (Date.today - 1).strftime('%Y%m%d')
-    # to test file delivery, remove 20121003.xml
-    # yesterday_str = "20121003"
-    # to test existing file
-    # yesterday_str = "20121002"
-    msg += "\nYesterday: #{yesterday_str}\nDataDir: #{data_dir}"
     begin
-      msg += "\nChecking if we already have the latest"
-      existing = Daily.from_xml_file yesterday_str, data_dir
-      msg += "\nYep: File exists for #{yesterday_str}"
-    rescue Errno::ENOENT => e
-      # not really an error
-      msg += "\nNope: " + e.message
-    end
-    if existing == nil
-      msg += "\nGetting the latest from the internet"
-      begin
-        daily = Daily.fetch_latest
-        daily.persist_to data_dir
-        msg += "\nSaved file to #{daily.file_location}\n"
-        mail.add_file :filename => "#{yesterday_str}.xml", :content => daily.xml
-      rescue RuntimeError => e
-        msg += "\nERROR: " + e.message
-        msg += "\nDate on file: #{daily.file_date.strftime('%Y%m%d')}"
-        msg += "\nShould have been today's data"
-      rescue Exception => e
-        msg += "\nERROR: " + e.message
+      todays = Daily.fetch_today
+      stored = Daily.from_stored_file todays.stored_as[0..7], data_dir
+      unless todays.same_as? stored
+        msg += "Storing #{todays} to #{data_dir}"
+        todays.persist_to data_dir
+        mail.add_file :filename => todays.stored_as, :content => todays.xml
+        mail.text_part { body msg }
+        mail.delivery_method :sendmail
+        mail.deliver
+      else
+        msg += "File already stored for #{todays}"
       end
-      puts "Sending email"
-      # only deliver mail on error
+    rescue Exception => e
+      todays.persist_to data_dir if todays && stored.nil?
+      msg = "There was an error at #{Time.now}\n"
+      msg += "#{e.message}\n"
+      msg += "fetched: #{todays.xml unless todays.nil?}\n"
+      msg += "stored: #{stored.xml unless stored.nil?}"
       mail.text_part { body msg }
       mail.delivery_method :sendmail
       mail.deliver
