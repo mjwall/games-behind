@@ -3,17 +3,10 @@ require 'json'
 require 'open-uri'
 
 class Daily
-  attr_accessor :xml, :data_dir, :hash
+  attr_accessor :xml, :hash
 
-  def self.from_xml_file date_str, data_dir
-    unless /\d{8}/.match date_str
-      raise RuntimeError.new "Not an 8 digit date"
-    end
-    xml_file = "#{data_dir}/#{date_str[0..3]}/#{date_str}.xml"
-    d = Daily.new
-    d.data_dir = data_dir
-    d.xml= File.read(xml_file)
-    d
+  def initialize xmlstr=nil
+    @xml=xmlstr
   end
 
   def hash
@@ -25,46 +18,61 @@ class Daily
   end
 
   def file_date
-    # file used to come out early in the day and only contain data for the previous day's games
-    # looks like as of 2013 the date is late on the same day
     @file_date ||=  DateTime.parse hash['sports_content']['sports_metadata']['date_time']
   end
 
-  def file_location
-    @file_location ||= set_file_location
+  def stored_as
+    # it appears that dates with 0 hours and 0 minutes are actually for the prior day
+    (file_date - (1/86400.0)).strftime('%Y%m%d')+".xml"
   end
 
-  def persist
-    # will be stored with previous days date as filename
-    raise RuntimeError.new "Not overwriting, File already exists, #{file_location}" if File.exists?(file_location)
-    directory = File.dirname(file_location)
-    Dir.mkdir directory  unless Dir.exists?(directory)
+  def same_as? daily
+    self.hash == daily.hash
+  end
+
+  def to_s
+    "Daily file for #{file_date}"
+  end
+
+  def persist_to data_dir, overwrite=false
+    file_location = Daily.get_file_location(stored_as, data_dir)
+    raise RuntimeError.new "Not overwriting, File already exists, #{file_location}" if File.exists?(file_location) && !overwrite
     File.open(file_location,'w') do |f|
       f.write @xml
     end
-    puts "File saved to #{file_location}"
   end
 
-  def persist_to data_dir
-    @data_dir = data_dir
-    persist
-  end
-
-  def self.fetch_latest
-    today_str = Date.today.strftime('%Y%m%d')
-    d = Daily.new
-    d.instance_variable_set(:@file_date, DateTime.now)
-    open("http://erikberg.com/mlb/standings/#{today_str}.xml") do |f|
-      d.xml = f.read
+  def self.from_stored_file date_str, data_dir
+    validate_date date_str
+    xml_file = get_file_location("#{date_str}.xml", data_dir)
+    begin
+      Daily.new File.read(xml_file)
+    rescue
+      nil
     end
-    d
+  end
+
+  def self.fetch_today
+    self.fetch Date.today.strftime('%Y%m%d')
+  end
+
+  def self.fetch date_str, base_url="http://erikberg.com/mlb/standings/"
+    validate_date date_str
+    file = open("#{base_url}#{date_str}.xml")
+    Daily.new file.read
   end
 
   private
-  def set_file_location
-    raise RuntimeError.new "No data directory specificed" if data_dir == nil
-    raise RuntimeError.new "No file date specified" if file_date == nil
-    prior_date = (file_date - 1).strftime('%Y%m%d')
-    "#{@data_dir}/#{prior_date[0..3]}/#{prior_date}.xml"
+  def self.validate_date date
+    unless /\d{8}/.match date
+      raise RuntimeError.new "Invalid Date format: #{date}"
+    end
+    DateTime.parse date
+  end
+
+  private
+  def self.get_file_location filename, data_dir
+     raise new RuntimeException "Directory does not exist: #{data_dir}" unless  Dir.exists? data_dir
+     "#{data_dir}/#{filename[0..3]}/#{filename}"
   end
 end
