@@ -12,7 +12,7 @@ class Fetcher
     msg = ""
 
     begin
-      todays = Daily.fetch_today
+      todays = Daily.fetch_latest
       stored = Daily.from_stored_file todays.stored_as[0..7], data_dir
       unless todays.same_as? stored
         msg += "Storing #{todays} to #{data_dir}"

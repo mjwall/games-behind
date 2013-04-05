@@ -9,3 +9,4 @@ TODO's
 - update API calls, request token
 - get data since 2008, http://erikberg.com/mlb/standings/20080505.json
 - Give credit on data on home page
+- Figure out how to get new files moved to server back into my repo

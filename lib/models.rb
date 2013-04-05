@@ -52,13 +52,14 @@ class Daily
     end
   end
 
-  def self.fetch_today
-    self.fetch Date.today.strftime('%Y%m%d')
+  def self.fetch_latest base_url="http://erikberg.com/mlb/standings"
+    file = open("#{base_url}.xml")
+    Daily.new file.read
   end
 
-  def self.fetch date_str, base_url="http://erikberg.com/mlb/standings/"
+  def self.fetch date_str, base_url="http://erikberg.com/mlb/standings"
     validate_date date_str
-    file = open("#{base_url}#{date_str}.xml")
+    file = open("#{base_url}/#{date_str}.xml")
     Daily.new file.read
   end
 
