@@ -14,22 +14,28 @@ class Fetcher
     begin
       todays = Daily.fetch_latest
       stored = Daily.from_stored_file todays.stored_as[0..7], data_dir
-      unless todays.same_as? stored
-        msg += "Storing #{todays} to #{data_dir}"
-        todays.persist_to data_dir
+      if (!todays.nil? && stored.nil?) || !todays.same_as?(stored)
+        todays_filename = "#{todays.stored_as}"
+        msg += "Storing #{todays} to #{data_dir}/#{todays_filename[0..3]}/#{todays_filename}"
+        todays.persist_to data_dir, true
         mail.add_file :filename => todays.stored_as, :content => todays.xml
         mail.text_part { body msg }
         mail.delivery_method :sendmail
         mail.deliver
       else
-        msg += "File already stored for #{todays}"
+        stored_filename = "#{stored.stored_as}"
+        msg += "File same as stored #{data_dir}/#{stored_filename[0..3]}/#{stored_filename}"
       end
-    rescue Exception => e
-      todays.persist_to data_dir if todays && stored.nil?
+    rescue => ex
       msg = "There was an error at #{Time.now}\n"
-      msg += "#{e.message}\n"
-      msg += "fetched: #{todays.xml unless todays.nil?}\n"
-      msg += "stored: #{stored.xml unless stored.nil?}"
+      msg += "#{ex.message}: #{ex.class}\n"
+      ex.backtrace.map{|e| msg += "#{e}\n"}
+      unless todays.nil?
+        mail.add_file :filename => "todays-#{todays.stored_as}", :content => todays.xml
+      end
+      unless stored.nil?
+        mail.add_file :filename => "stored-#{stored.stored_as}", :content => stored.xml
+      end
       mail.text_part { body msg }
       mail.delivery_method :sendmail
       mail.deliver

@@ -11,7 +11,7 @@
     -->
 
 <sports-content>
-  <sports-metadata language="en-US" date-time="2013-04-04T03:12:00-04:00" document-class="standings" date-coverage-type="season-regular" date-coverage-value="2013">
+  <sports-metadata language="en-US" date-time="2013-04-04T21:56:00-04:00" document-class="standings" date-coverage-type="season-regular" date-coverage-value="2013">
     <sports-title>MLB Standings</sports-title>
   </sports-metadata>
   <standing content-label="East">
@@ -25,60 +25,60 @@
       <team-metadata team-key="boston-red-sox" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Boston" last="Red Sox"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="0" winning-percentage="1.000" points-scored-for="15" points-scored-against="6" points-difference="9" streak-type="win" streak-total="2"/>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="17" points-scored-against="10" points-difference="7" streak-type="loss" streak-total="1"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="2" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="0"/>
-      </team-stats>
-    </team>
-    <team>
-      <team-metadata team-key="tampa-bay-rays" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="Tampa Bay" last="Rays"/>
-      </team-metadata>
-      <team-stats events-played="2" games-back="1.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="1" winning-percentage=".500" points-scored-for="12" points-scored-against="14" points-difference="-2" streak-type="win" streak-total="1"/>
-        <outcome-totals alignment-scope="events-home" wins="1" losses="1"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="1"/>
+        <outcome-totals alignment-scope="events-away" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="baltimore-orioles" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Baltimore" last="Orioles"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="1.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="1" winning-percentage=".500" points-scored-for="14" points-scored-against="12" points-difference="2" streak-type="loss" streak-total="1"/>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="20" points-scored-against="15" points-difference="5" streak-type="win" streak-total="1"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="1"/>
+        <outcome-totals alignment-scope="events-away" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
       </team-stats>
     </team>
     <team>
-      <team-metadata team-key="toronto-blue-jays" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="Toronto" last="Blue Jays"/>
+      <team-metadata team-key="tampa-bay-rays" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="Tampa Bay" last="Rays"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="2.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="0" losses="2" winning-percentage=".000" points-scored-for="3" points-scored-against="7" points-difference="-4" streak-type="loss" streak-total="2"/>
-        <outcome-totals alignment-scope="events-home" wins="0" losses="2"/>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="15" points-scored-against="20" points-difference="-5" streak-type="loss" streak-total="1"/>
+        <outcome-totals alignment-scope="events-home" wins="1" losses="2"/>
         <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="0" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="new-york-yankees" team-source="http://erikberg.com/xmlstats/keys">
         <name first="New York" last="Yankees"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="2.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="0" losses="2" winning-percentage=".000" points-scored-for="6" points-scored-against="15" points-difference="-9" streak-type="loss" streak-total="2"/>
-        <outcome-totals alignment-scope="events-home" wins="0" losses="2"/>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="10" points-scored-against="17" points-difference="-7" streak-type="win" streak-total="1"/>
+        <outcome-totals alignment-scope="events-home" wins="1" losses="2"/>
         <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="0" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
+      </team-stats>
+    </team>
+    <team>
+      <team-metadata team-key="toronto-blue-jays" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="Toronto" last="Blue Jays"/>
+      </team-metadata>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="13" points-scored-against="15" points-difference="-2" streak-type="win" streak-total="1"/>
+        <outcome-totals alignment-scope="events-home" wins="1" losses="2"/>
+        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
       </team-stats>
     </team>
   </standing>
@@ -90,63 +90,63 @@
       </sports-content-codes>
     </standing-metadata>
     <team>
+      <team-metadata team-key="minnesota-twins" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="Minnesota" last="Twins"/>
+      </team-metadata>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="13" points-scored-against="8" points-difference="5" streak-type="win" streak-total="2"/>
+        <outcome-totals alignment-scope="events-home" wins="2" losses="1"/>
+        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
+      </team-stats>
+    </team>
+    <team>
       <team-metadata team-key="cleveland-indians" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Cleveland" last="Indians"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="0" winning-percentage="1.000" points-scored-for="7" points-scored-against="3" points-difference="4" streak-type="win" streak-total="2"/>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="15" points-scored-against="13" points-difference="2" streak-type="loss" streak-total="1"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="2" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="0"/>
+        <outcome-totals alignment-scope="events-away" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="chicago-white-sox" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Chicago" last="White Sox"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="0" winning-percentage="1.000" points-scored-for="6" points-scored-against="2" points-difference="4" streak-type="win" streak-total="2"/>
-        <outcome-totals alignment-scope="events-home" wins="2" losses="0"/>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="7" points-scored-against="5" points-difference="2" streak-type="loss" streak-total="1"/>
+        <outcome-totals alignment-scope="events-home" wins="2" losses="1"/>
         <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="0"/>
-      </team-stats>
-    </team>
-    <team>
-      <team-metadata team-key="minnesota-twins" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="Minnesota" last="Twins"/>
-      </team-metadata>
-      <team-stats events-played="2" games-back="1.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="1" winning-percentage=".500" points-scored-for="5" points-scored-against="6" points-difference="-1" streak-type="win" streak-total="1"/>
-        <outcome-totals alignment-scope="events-home" wins="1" losses="1"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="detroit-tigers" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Detroit" last="Tigers"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="1.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="1" winning-percentage=".500" points-scored-for="6" points-scored-against="5" points-difference="1" streak-type="loss" streak-total="1"/>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="8" points-scored-against="13" points-difference="-5" streak-type="loss" streak-total="2"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="1"/>
+        <outcome-totals alignment-scope="events-away" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="kansas-city-royals" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Kansas City" last="Royals"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="2.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="0" losses="2" winning-percentage=".000" points-scored-for="2" points-scored-against="6" points-difference="-4" streak-type="loss" streak-total="2"/>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="5" points-scored-against="7" points-difference="-2" streak-type="win" streak-total="1"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="0" losses="2"/>
+        <outcome-totals alignment-scope="events-away" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
       </team-stats>
     </team>
   </standing>
@@ -173,24 +173,24 @@
       <team-metadata team-key="seattle-mariners" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Seattle" last="Mariners"/>
       </team-metadata>
-      <team-stats events-played="3" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="11" points-scored-against="7" points-difference="4" streak-type="loss" streak-total="1"/>
+      <team-stats events-played="4" games-back="0.5">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="2" winning-percentage=".500" points-scored-for="13" points-scored-against="15" points-difference="-2" streak-type="loss" streak-total="2"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="2" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
+        <outcome-totals alignment-scope="events-away" wins="2" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="2"/>
       </team-stats>
     </team>
     <team>
-      <team-metadata team-key="los-angeles-angels" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="Los Angeles" last="Angels"/>
+      <team-metadata team-key="oakland-athletics" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="Oakland" last="Athletics"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="0.5">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="1" winning-percentage=".500" points-scored-for="7" points-scored-against="6" points-difference="1" streak-type="loss" streak-total="1"/>
-        <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="1"/>
+      <team-stats events-played="4" games-back="0.5">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="2" winning-percentage=".500" points-scored-for="15" points-scored-against="13" points-difference="2" streak-type="win" streak-total="2"/>
+        <outcome-totals alignment-scope="events-home" wins="2" losses="2"/>
+        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="2"/>
       </team-stats>
     </team>
     <team>
@@ -206,13 +206,13 @@
       </team-stats>
     </team>
     <team>
-      <team-metadata team-key="oakland-athletics" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="Oakland" last="Athletics"/>
+      <team-metadata team-key="los-angeles-angels" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="Los Angeles" last="Angels"/>
       </team-metadata>
       <team-stats events-played="3" games-back="1.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="7" points-scored-against="11" points-difference="-4" streak-type="win" streak-total="1"/>
-        <outcome-totals alignment-scope="events-home" wins="1" losses="2"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="11" points-scored-against="11" points-difference="0" streak-type="loss" streak-total="2"/>
+        <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
+        <outcome-totals alignment-scope="events-away" wins="1" losses="2"/>
         <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
         <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
       </team-stats>
@@ -226,63 +226,63 @@
       </sports-content-codes>
     </standing-metadata>
     <team>
-      <team-metadata team-key="atlanta-braves" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="Atlanta" last="Braves"/>
-      </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="0" winning-percentage="1.000" points-scored-for="16" points-scored-against="7" points-difference="9" streak-type="win" streak-total="2"/>
-        <outcome-totals alignment-scope="events-home" wins="2" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="0"/>
-      </team-stats>
-    </team>
-    <team>
       <team-metadata team-key="washington-nationals" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Washington" last="Nationals"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="0" winning-percentage="1.000" points-scored-for="5" points-scored-against="0" points-difference="5" streak-type="win" streak-total="2"/>
-        <outcome-totals alignment-scope="events-home" wins="2" losses="0"/>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="3" losses="0" winning-percentage="1.000" points-scored-for="11" points-scored-against="1" points-difference="10" streak-type="win" streak-total="3"/>
+        <outcome-totals alignment-scope="events-home" wins="3" losses="0"/>
         <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="0"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="3" losses="0"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="3" losses="0"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="new-york-mets" team-source="http://erikberg.com/xmlstats/keys">
         <name first="New York" last="Mets"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="0" winning-percentage="1.000" points-scored-for="19" points-scored-against="6" points-difference="13" streak-type="win" streak-total="2"/>
-        <outcome-totals alignment-scope="events-home" wins="2" losses="0"/>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="20" points-scored-against="8" points-difference="12" streak-type="loss" streak-total="1"/>
+        <outcome-totals alignment-scope="events-home" wins="2" losses="1"/>
         <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="0"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
       </team-stats>
     </team>
     <team>
-      <team-metadata team-key="miami-marlins" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="Miami" last="Marlins"/>
+      <team-metadata team-key="atlanta-braves" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="Atlanta" last="Braves"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="2.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="0" losses="2" winning-percentage=".000" points-scored-for="0" points-scored-against="5" points-difference="-5" streak-type="loss" streak-total="2"/>
-        <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="0" losses="2"/>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="16" points-scored-against="9" points-difference="7" streak-type="loss" streak-total="1"/>
+        <outcome-totals alignment-scope="events-home" wins="2" losses="1"/>
+        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="philadelphia-phillies" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Philadelphia" last="Phillies"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="2.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="0" losses="2" winning-percentage=".000" points-scored-for="7" points-scored-against="16" points-difference="-9" streak-type="loss" streak-total="2"/>
+      <team-stats events-played="3" games-back="2.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="9" points-scored-against="16" points-difference="-7" streak-type="win" streak-total="1"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="0" losses="2"/>
+        <outcome-totals alignment-scope="events-away" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
+      </team-stats>
+    </team>
+    <team>
+      <team-metadata team-key="miami-marlins" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="Miami" last="Marlins"/>
+      </team-metadata>
+      <team-stats events-played="3" games-back="3.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="0" losses="3" winning-percentage=".000" points-scored-for="1" points-scored-against="11" points-difference="-10" streak-type="loss" streak-total="3"/>
+        <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
+        <outcome-totals alignment-scope="events-away" wins="0" losses="3"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="0" losses="3"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="0" losses="3"/>
       </team-stats>
     </team>
   </standing>
@@ -297,43 +297,43 @@
       <team-metadata team-key="cincinnati-reds" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Cincinnati" last="Reds"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="1" winning-percentage=".500" points-scored-for="6" points-scored-against="7" points-difference="-1" streak-type="win" streak-total="1"/>
-        <outcome-totals alignment-scope="events-home" wins="1" losses="1"/>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="11" points-scored-against="11" points-difference="0" streak-type="win" streak-total="2"/>
+        <outcome-totals alignment-scope="events-home" wins="2" losses="1"/>
         <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="1"/>
-      </team-stats>
-    </team>
-    <team>
-      <team-metadata team-key="pittsburgh-pirates" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="Pittsburgh" last="Pirates"/>
-      </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="1" winning-percentage=".500" points-scored-for="4" points-scored-against="3" points-difference="1" streak-type="win" streak-total="1"/>
-        <outcome-totals alignment-scope="events-home" wins="1" losses="1"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="chicago-cubs" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Chicago" last="Cubs"/>
       </team-metadata>
-      <team-stats events-played="2" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="1" winning-percentage=".500" points-scored-for="3" points-scored-against="4" points-difference="-1" streak-type="loss" streak-total="1"/>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="6" points-scored-against="6" points-difference="0" streak-type="win" streak-total="1"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="1"/>
+        <outcome-totals alignment-scope="events-away" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
+      </team-stats>
+    </team>
+    <team>
+      <team-metadata team-key="pittsburgh-pirates" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="Pittsburgh" last="Pirates"/>
+      </team-metadata>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="6" points-scored-against="6" points-difference="0" streak-type="loss" streak-total="1"/>
+        <outcome-totals alignment-scope="events-home" wins="1" losses="2"/>
+        <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
       </team-stats>
     </team>
     <team>
       <team-metadata team-key="st-louis-cardinals" team-source="http://erikberg.com/xmlstats/keys">
         <name first="St. Louis" last="Cardinals"/>
       </team-metadata>
-      <team-stats events-played="3" games-back="0.5">
+      <team-stats events-played="3" games-back="1.0">
         <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="17" points-scored-against="17" points-difference="0" streak-type="loss" streak-total="1"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
         <outcome-totals alignment-scope="events-away" wins="1" losses="2"/>
@@ -345,7 +345,7 @@
       <team-metadata team-key="milwaukee-brewers" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Milwaukee" last="Brewers"/>
       </team-metadata>
-      <team-stats events-played="3" games-back="0.5">
+      <team-stats events-played="3" games-back="1.0">
         <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="12" points-scored-against="19" points-difference="-7" streak-type="loss" streak-total="2"/>
         <outcome-totals alignment-scope="events-home" wins="1" losses="2"/>
         <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
@@ -361,6 +361,18 @@
         <sports-content-code code-type="division" code-key="MLB.NL.W" code-source="http://erikberg.com/xmlstats/keys"/>
       </sports-content-codes>
     </standing-metadata>
+    <team>
+      <team-metadata team-key="san-francisco-giants" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="San Francisco" last="Giants"/>
+      </team-metadata>
+      <team-stats events-played="3" games-back="0.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="8" points-scored-against="7" points-difference="1" streak-type="win" streak-total="2"/>
+        <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
+        <outcome-totals alignment-scope="events-away" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
+      </team-stats>
+    </team>
     <team>
       <team-metadata team-key="arizona-diamondbacks" team-source="http://erikberg.com/xmlstats/keys">
         <name first="Arizona" last="Diamondbacks"/>
@@ -386,15 +398,15 @@
       </team-stats>
     </team>
     <team>
-      <team-metadata team-key="san-francisco-giants" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="San Francisco" last="Giants"/>
+      <team-metadata team-key="san-diego-padres" team-source="http://erikberg.com/xmlstats/keys">
+        <name first="San Diego" last="Padres"/>
       </team-metadata>
-      <team-stats events-played="3" games-back="0.0">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="2" losses="1" winning-percentage=".667" points-scored-for="8" points-scored-against="7" points-difference="1" streak-type="win" streak-total="2"/>
+      <team-stats events-played="3" games-back="1.0">
+        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="1" losses="2" winning-percentage=".333" points-scored-for="8" points-scored-against="20" points-difference="-12" streak-type="win" streak-total="1"/>
         <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="2" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="2" losses="1"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="2" losses="1"/>
+        <outcome-totals alignment-scope="events-away" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
+        <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
       </team-stats>
     </team>
     <team>
@@ -407,18 +419,6 @@
         <outcome-totals alignment-scope="events-away" wins="0" losses="0"/>
         <outcome-totals duration-scope="events-most-recent-5" wins="1" losses="2"/>
         <outcome-totals duration-scope="events-most-recent-10" wins="1" losses="2"/>
-      </team-stats>
-    </team>
-    <team>
-      <team-metadata team-key="san-diego-padres" team-source="http://erikberg.com/xmlstats/keys">
-        <name first="San Diego" last="Padres"/>
-      </team-metadata>
-      <team-stats events-played="2" games-back="1.5">
-        <outcome-totals duration-scope="events-all" competition-scope="events-all" alignment-scope="events-all" wins="0" losses="2" winning-percentage=".000" points-scored-for="6" points-scored-against="19" points-difference="-13" streak-type="loss" streak-total="2"/>
-        <outcome-totals alignment-scope="events-home" wins="0" losses="0"/>
-        <outcome-totals alignment-scope="events-away" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-5" wins="0" losses="2"/>
-        <outcome-totals duration-scope="events-most-recent-10" wins="0" losses="2"/>
       </team-stats>
     </team>
   </standing>
