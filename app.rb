@@ -43,7 +43,7 @@ class MyApp < Sinatra::Base
 
   private
   def get_daily date_str
-    Daily.from_xml_file date_str, settings.data_dir
+    Daily.from_stored_file date_str, settings.data_dir
   end
 
   run! if app_file == $0
