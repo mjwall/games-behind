@@ -11,8 +11,7 @@ class Fetcher
     end
     msg = "Run started at #{Time.now}\n"
     msg += "Data directory: #{data_dir}\n"
-    #no need to send mail if no files are written and no exceptions are raised
-    @send_mail = false
+    @send_mail = true
 
     begin
       msg += "Checking latest\n"
@@ -23,6 +22,7 @@ class Fetcher
     rescue => e
       if e.message.match("Not overwriting, same file already exists")
         msg += "#{e.message}\n"
+        #no need to send mail if filess are raised
       else
         msg += "Error with latest\n"
         msg += "#{e.message}: #{e.class}\n"

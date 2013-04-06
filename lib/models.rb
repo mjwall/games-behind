@@ -17,29 +17,53 @@ class Daily
     hash.to_json
   end
 
-  def file_date
-    @file_date ||=  DateTime.parse hash['sports_content']['sports_metadata']['date_time']
+  def parsed_date
+    @parsed_date ||= DateTime.parse hash['sports_content']['sports_metadata']['date_time']
   end
 
-  def stored_as
+  def formatted_date
+    @formatted_date ||= parsed_date.strftime(Daily.date_format)
+  end
+
+  def file_name
     # it appears that dates with 0 hours and 0 minutes are actually for the prior day
-    (file_date - (1/86400.0)).strftime('%Y%m%d')+".xml"
+    @file_name ||= formatted_date+".xml"
   end
 
-  def same_as? daily
-    self.hash == daily.hash
+  def == other_daily
+    unless other_daily.class == self.class
+      raise RuntimeException.new "You tried to compare a #{other_daily.class} to a #{self.class}"
+    end
+    self.hash == other_daily.hash
+  end
+
+  #do I need to override this too?
+  def != other_daily
+    ! self == other_daily
   end
 
   def to_s
-    "Daily file for #{file_date}"
+    "Daily file #{file_name} on #{parsed_date}"
   end
 
-  def persist_to data_dir, overwrite=false
-    file_location = Daily.get_file_location(stored_as, data_dir)
-    raise RuntimeError.new "Not overwriting, File already exists, #{file_location}" if File.exists?(file_location) && !overwrite
-    File.open(file_location,'w') do |f|
-      f.write @xml
+  def file_location data_dir
+    Daily.get_file_location file_name, data_dir
+  end
+
+  def persist_to data_dir
+    stored = Daily.from_stored_file(formatted_date, data_dir)
+    location = file_location data_dir
+    if stored.nil? || self != stored
+      File.open(location,'w') do |f|
+        f.write @xml
+      end
+    else
+      raise RuntimeError.new "Not overwriting, same file already exists at #{location}"
     end
+  end
+
+  def self.date_format
+    "%Y%m%d"
   end
 
   def self.from_stored_file date_str, data_dir
@@ -55,6 +79,10 @@ class Daily
   def self.fetch_latest base_url="http://erikberg.com/mlb/standings"
     file = open("#{base_url}.xml")
     Daily.new file.read
+  end
+
+  def self.fetch_yesterday base_url="http://erikberg.com/mlb/standings"
+    Daily.fetch (Date.today - 1).strftime(Daily.date_format), base_url
   end
 
   def self.fetch date_str, base_url="http://erikberg.com/mlb/standings"
@@ -73,7 +101,9 @@ class Daily
 
   private
   def self.get_file_location filename, data_dir
-     raise new RuntimeException "Directory does not exist: #{data_dir}" unless  Dir.exists? data_dir
-     "#{data_dir}/#{filename[0..3]}/#{filename}"
+    # stored in a subdirectory by year
+    file_dir = "#{data_dir}/#{filename[0..3]}"
+    raise new RuntimeException "Directory does not exist: #{file_dir}" unless  Dir.exists? file_dir
+    "#{file_dir}/#{filename}"
   end
 end

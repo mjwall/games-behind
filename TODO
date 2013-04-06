@@ -13,3 +13,8 @@ TODO's
 - Figure out how to get new files moved to server back into my repo
 - add helper for rake task to save file earlier than latest
   Daily.fetch("20130405").persist_to "#{ENV['PWD']}/data"
+
+- change file save to gz the file, big difference
+du -h -d 1
+9.1M  ./2012
+720K  ./2012gz
