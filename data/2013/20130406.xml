@@ -11,7 +11,7 @@
     -->
 
 <sports-content>
-  <sports-metadata language="en-US" date-time="2013-04-05T00:00:00-04:00" document-class="standings" date-coverage-type="season-regular" date-coverage-value="2013">
+  <sports-metadata language="en-US" date-time="2013-04-06T00:44:00-04:00" document-class="standings" date-coverage-type="season-regular" date-coverage-value="2013">
     <sports-title>MLB Standings</sports-title>
   </sports-metadata>
   <standing content-label="East">
