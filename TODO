@@ -1,6 +1,5 @@
 TODO's
 
-- refactor stored_as to calculated_filename or something
 - missing daily/whatever should return 404, not 500
 - build json for 1 day
 - build aggregate json
@@ -11,10 +10,4 @@ TODO's
 - get data since 2008, http://erikberg.com/mlb/standings/20080505.json
 - Give credit on data on home page
 - Figure out how to get new files moved to server back into my repo
-- add helper for rake task to save file earlier than latest
-  Daily.fetch("20130405").persist_to "#{ENV['PWD']}/data"
-
-- change file save to gz the file, big difference
-du -h -d 1
-9.1M  ./2012
-720K  ./2012gz
+- BUG https://gamesbehind-mjwall.rhcloud.com/fetch/20130331 should have overwritten the file, as the stored date is 1 Apr
