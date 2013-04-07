@@ -51,7 +51,7 @@ class Daily
   end
 
   def persist_to data_dir
-    stored = Daily.from_stored_file(formatted_date, data_dir)
+    stored = Daily.from_local(formatted_date, data_dir)
     location = file_location data_dir
     if stored.nil? || self != stored
       File.open(location,'w') do |f|
@@ -66,7 +66,7 @@ class Daily
     "%Y%m%d"
   end
 
-  def self.from_stored_file date_str, data_dir
+  def self.from_local date_str, data_dir
     validate_date date_str
     xml_file = get_file_location("#{date_str}.xml", data_dir)
     begin
@@ -76,16 +76,15 @@ class Daily
     end
   end
 
-  def self.fetch_latest base_url="http://erikberg.com/mlb/standings"
-    file = open("#{base_url}.xml")
-    Daily.new file.read
+  def self.latest_source base_url="http://erikberg.com/mlb/standings"
+    Daily.new open("#{base_url}.xml").read
   end
 
-  def self.fetch_yesterday base_url="http://erikberg.com/mlb/standings"
-    Daily.fetch (Date.today - 1).strftime(Daily.date_format), base_url
+  def self.yesterday_source base_url="http://erikberg.com/mlb/standings"
+    Daily.source (Date.today - 1).strftime(Daily.date_format), base_url
   end
 
-  def self.fetch date_str, base_url="http://erikberg.com/mlb/standings"
+  def self.source date_str, base_url="http://erikberg.com/mlb/standings"
     validate_date date_str
     file = open("#{base_url}/#{date_str}.xml")
     Daily.new file.read

@@ -36,14 +36,19 @@ class MyApp < Sinatra::Base
     get_daily(d).xml.to_s
   end
 
-  get '/fetch' do
+  get '/hourly_fetch' do
     content_type :text
-    Fetcher.fetch
+    Fetcher.hourly_fetch
+  end
+
+  get %r{/fetch/([\d]{8})$} do |d|
+    content_type :text
+    Fetcher.fetch_for(d)
   end
 
   private
   def get_daily date_str
-    Daily.from_stored_file date_str, settings.data_dir
+    Daily.from_local date_str, settings.data_dir
   end
 
   run! if app_file == $0
