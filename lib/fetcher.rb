@@ -10,12 +10,12 @@ class Fetcher
     msg_append "Data directory: #{@data_dir}"
   end
 
-  def data_dir
-    @data_dir ||= raise RuntimeError.new "Data directory not set"
-  end
-
   def msg
     @msg
+  end
+
+  def data_dir
+    @data_dir ||= raise RuntimeError.new "Data directory not set"
   end
 
   def msg_append txt
@@ -45,7 +45,7 @@ class Fetcher
 
   def deliver_mail
     if send_mail?
-      mail.text_part { body msg }
+      mail.text_part { body @msg }
       mail.delivery_method :sendmail
       mail.deliver
       msg_append "Mail sent"

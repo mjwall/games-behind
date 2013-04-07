@@ -27,7 +27,7 @@ class Daily
 
   def file_name
     # it appears that dates with 0 hours and 0 minutes are actually for the prior day
-    @file_name ||= formatted_date+".xml"
+    @file_name ||= formatted_date + Daily.file_ext
   end
 
   def == other_daily
@@ -54,8 +54,9 @@ class Daily
     stored = Daily.from_local(formatted_date, data_dir)
     location = file_location data_dir
     if stored.nil? || self != stored
-      File.open(location,'w') do |f|
-        f.write @xml
+      Zlib::GzipWriter.open(location) do |gz|
+        gz.mtime = parsed_date
+        gz.write @xml
       end
     else
       raise RuntimeError.new "Not overwriting, same file already exists at #{location}"
@@ -66,11 +67,15 @@ class Daily
     "%Y%m%d"
   end
 
+  def self.file_ext
+    ".xml.gz"
+  end
+
   def self.from_local date_str, data_dir
     validate_date date_str
-    xml_file = get_file_location("#{date_str}.xml", data_dir)
+    file = get_file_location("#{date_str}#{file_ext}", data_dir)
     begin
-      Daily.new File.read(xml_file)
+      Daily.new Zlib::GzipReader.new(File.open(file)).read
     rescue
       nil
     end
