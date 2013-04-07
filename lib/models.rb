@@ -107,7 +107,7 @@ class Daily
   def self.get_file_location filename, data_dir
     # stored in a subdirectory by year
     file_dir = "#{data_dir}/#{filename[0..3]}"
-    raise new RuntimeException "Directory does not exist: #{file_dir}" unless  Dir.exists? file_dir
+    raise RuntimeError.new "Directory does not exist: #{file_dir}" unless  Dir.exists? file_dir
     "#{file_dir}/#{filename}"
   end
 end
