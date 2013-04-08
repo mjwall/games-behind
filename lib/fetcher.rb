@@ -60,19 +60,24 @@ class Fetcher
       msg_append "Calling Daily.#{daily_method} with #{date_str}"
       remote = Daily.send(daily_method.to_sym, *date_str)
       if remote
-        msg_append remote.persist_to(data_dir)
+        remote.persist_to(data_dir)
+        msg_append "File #{remote.file_name} written to #{data_dir}"
         mail_add_file remote
         set_mail_send
       else
         msg_append "Nothing returned"
       end
     rescue => e
-      msg_append "Error:"
-      msg_append "#{e.message}: #{e.class}"
-      e.backtrace.map do |ex|
-        msg_append "#{ex}"
+      if e.message.match "Not overwriting, same file"
+        msg_append e.message
+      else
+        msg_append "Error:"
+        msg_append "#{e.message}: #{e.class}"
+        e.backtrace.map do |ex|
+          msg_append "#{ex}"
+        end
+        set_mail_send
       end
-      set_mail_send
     end
   end
 

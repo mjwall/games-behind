@@ -46,19 +46,20 @@ class Daily
     Daily.get_file_location file_name, data_dir
   end
 
-
-
   def persist_to data_dir
-    stored = Daily.from_local(formatted_date, data_dir)
+    begin
+      stored = Daily.from_local(formatted_date, data_dir)
+    rescue Errno::ENOENT => e
+      stored = nil # if the file doesn't exist, we are going to write it
+    end
     location = file_location data_dir
     if stored.nil? || self != stored
       Zlib::GzipWriter.open(location) do |gz|
         gz.mtime = parsed_date
         gz.write @xml
       end
-      "File written to #{location}"
     else
-      "Not overwriting, same file already exists at #{location}"
+      raise RuntimeError.new  "Not overwriting, same file already exists at #{location}"
     end
   end
 
@@ -74,21 +75,15 @@ class Daily
   def self.from_local date_str, data_dir
     validate_date date_str
     file = get_file_location("#{date_str}#{file_ext}", data_dir)
-    begin
-      Daily.new Zlib::GzipReader.new(File.open(file)).read
-    rescue Errno::ENOENT
-      nil
-    end
+    Daily.new Zlib::GzipReader.new(File.open(file)).read
   end
 
   def self.latest_source base_url="http://erikberg.com/mlb/standings"
     latest = Daily.new open("#{base_url}.xml").read
     if latest.parsed_date.to_date != Date.today
-      puts "Latest is not for today"
-      nil
-    else
-      latest
+      raise RuntimeError.new "Latest is not for today"
     end
+    latest
   end
 
   def self.yesterday_source base_url="http://erikberg.com/mlb/standings"
