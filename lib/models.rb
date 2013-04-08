@@ -1,6 +1,7 @@
 require 'active_support/core_ext/hash'
 require 'json'
 require 'open-uri'
+require 'zlib'
 
 class Daily
   attr_accessor :xml, :hash
@@ -37,11 +38,6 @@ class Daily
     self.hash == other_daily.hash
   end
 
-  #do I need to override this too?
-  def != other_daily
-    ! self == other_daily
-  end
-
   def to_s
     "Daily file #{file_name} on #{parsed_date}"
   end
@@ -49,6 +45,8 @@ class Daily
   def file_location data_dir
     Daily.get_file_location file_name, data_dir
   end
+
+
 
   def persist_to data_dir
     stored = Daily.from_local(formatted_date, data_dir)
@@ -58,8 +56,9 @@ class Daily
         gz.mtime = parsed_date
         gz.write @xml
       end
+      "File written to #{location}"
     else
-      raise RuntimeError.new "Not overwriting, same file already exists at #{location}"
+      "Not overwriting, same file already exists at #{location}"
     end
   end
 
@@ -71,18 +70,25 @@ class Daily
     ".xml.gz"
   end
 
+  # returns nil if not found
   def self.from_local date_str, data_dir
     validate_date date_str
     file = get_file_location("#{date_str}#{file_ext}", data_dir)
     begin
       Daily.new Zlib::GzipReader.new(File.open(file)).read
-    rescue
+    rescue Errno::ENOENT
       nil
     end
   end
 
   def self.latest_source base_url="http://erikberg.com/mlb/standings"
-    Daily.new open("#{base_url}.xml").read
+    latest = Daily.new open("#{base_url}.xml").read
+    if latest.parsed_date.to_date != Date.today
+      puts "Latest is not for today"
+      nil
+    else
+      latest
+    end
   end
 
   def self.yesterday_source base_url="http://erikberg.com/mlb/standings"

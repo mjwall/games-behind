@@ -45,10 +45,11 @@ class Fetcher
 
   def deliver_mail
     if send_mail?
-      mail.text_part { body @msg }
+      msg_append "Sending mail"
+      fetcher_msg = self.msg
+      mail.text_part { body fetcher_msg }
       mail.delivery_method :sendmail
       mail.deliver
-      msg_append "Mail sent"
     else
       msg_append "No mail sent"
     end
@@ -58,20 +59,20 @@ class Fetcher
     begin
       msg_append "Calling Daily.#{daily_method} with #{date_str}"
       remote = Daily.send(daily_method.to_sym, *date_str)
-      remote.persist_to data_dir
-      mail_add_file remote
-      set_mail_send
-    rescue => e
-      if e.message.match("Not overwriting, same file already exists")
-        msg_append "#{e.message}"
-      else
-        msg_append "Error:"
-        msg_append "#{e.message}: #{e.class}"
-        e.backtrace.map do |ex|
-          msg_append "#{ex}"
-        end
+      if remote
+        msg_append remote.persist_to(data_dir)
+        mail_add_file remote
         set_mail_send
+      else
+        msg_append "Nothing returned"
       end
+    rescue => e
+      msg_append "Error:"
+      msg_append "#{e.message}: #{e.class}"
+      e.backtrace.map do |ex|
+        msg_append "#{ex}"
+      end
+      set_mail_send
     end
   end
 

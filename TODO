@@ -11,3 +11,4 @@ TODO's
 - Give credit on data on home page
 - Figure out how to get new files moved to server back into my repo
 - BUG https://gamesbehind-mjwall.rhcloud.com/fetch/20130331 should have overwritten the file, as the stored date is 1 Apr
+- BUG msg not added when file written
