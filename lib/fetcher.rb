@@ -84,7 +84,10 @@ class Fetcher
   def self.hourly_fetch
     fetcher = Fetcher.send(:new)
     fetcher.fetch "yesterday_source"
-    fetcher.fetch "latest_source"
+    # I think there are times when the latest is yesterday at some
+    # hour and yesterday is the same file at 00:00, which will
+    # cause both files to be written every hour.  Removing latest for now
+    # fetcher.fetch "latest_source"
     fetcher.deliver_mail
     fetcher.msg
   end
